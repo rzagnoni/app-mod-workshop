@@ -29,10 +29,6 @@ COPY . .
 
 # Setup the PORT environment variable in Apache configuration files: https://cloud.google.com/run/docs/reference/container-contract#port
 ENV PORT=8080
-ENV DB_HOST=DB_HOST
-ENV DB_NAME=DB_NAME
-ENV DB_USER=DB_USER
-ENV DB_PASS=DB_PASS
 
 # Tell Apache to use 8080 instead of 80.
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
